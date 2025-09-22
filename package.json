@@ -33,12 +33,12 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "@types/node": "^24.5.2",
-    "dockview-core": "^4.7.1",
     "lit": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
+    "@types/node": "^24.5.2",
+    "dockview-core": "^4.7.1",
     "eslint": "^9.36.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
@@ -51,6 +51,10 @@
     "vite-plugin-checker": "^0.10.3",
     "@ztolley/wombat-sdk": "^0.0.2"
   },
+  "peerDependencies": {
+    "dockview-core": "^4.7.1",
+    "@ztolley/wombat-sdk": "^0.0.2"
+  },
   "dockview": {
     "panels": [
       {
@@ -60,8 +64,5 @@
         "title": "Select Contact"
       }
     ]
-  },
-  "peerDependencies": {
-    "@ztolley/wombat-sdk": "^0.0.2"
   }
 }
