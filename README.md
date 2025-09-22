@@ -1,12 +1,11 @@
-# Dockvew Modular Plugin
+# Wombat Contact Select
 
-A POC Dockview panel for inclusion in the Dockview plugin repo.
+A POC Dockview panel for inclusion in the Wombat UI (Dockview modular app).
 
 ## Project builds
 
 - `npm run build:panel` – generates `dist/sum-panel.js` plus type declarations for publishing the Dockview panel as an npm package. This is also the default `npm run build` target and runs during `npm install` via the `prepare` script.
 - `npm run build:app` – produces the full demo application bundle used for local experimentation. Run this when you need the standalone Dockview web app output in `dist/`.
-
 
 ## Publishing
 
@@ -14,7 +13,6 @@ A POC Dockview panel for inclusion in the Dockview plugin repo.
 2. Sign in to npm (`npm login`) if you have not already done so on this machine.
 3. Build the distributable: `npm run build:panel` (this runs automatically during `npm publish` because of the `prepare` script).
 4. Publish with public access: `npm publish --access public`.
-
 
 ## Dockview panel plugin API
 
