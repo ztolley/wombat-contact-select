@@ -1,0 +1,67 @@
+{
+  "name": "@ztolley/wombat-contact-select",
+  "version": "0.0.1",
+  "description": "A panel that lets you select a contact",
+  "author": "Zac Tolley<zac@theolleys.com>",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/types/panels/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/panels/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev": "vite",
+    "build": "npm run clean && npm run build:types && npm run build:package",
+    "build:package": "vite build --config vite.package.config.ts",
+    "build:types": "tsc --project tsconfig.types.json && node scripts/generate-type-index.mjs",
+    "lint": "eslint . --ext .ts,.js",
+    "preview": "vite preview",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@types/node": "^24.5.2",
+    "dockview-core": "^4.7.1",
+    "lit": "^3.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.44.0",
+    "vite": "^7.1.6",
+    "vite-plugin-checker": "^0.10.3",
+    "@ztolley/wombat-sdk": "^0.0.2"
+  },
+  "dockview": {
+    "panels": [
+      {
+        "name": "contactSelectPanel",
+        "module": "./dist/index.js",
+        "export": "ContactSelectorPanel",
+        "title": "Select Contact"
+      }
+    ]
+  },
+  "peerDependencies": {
+    "@ztolley/wombat-sdk": "^0.0.2"
+  }
+}
